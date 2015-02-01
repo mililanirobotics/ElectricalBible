@@ -1,2 +1,2 @@
 # Electrical Bible
-[The roboRIO](roboRIO/roboRIO.md)
+* [The roboRIO](roboRIO/roboRIO.md)
