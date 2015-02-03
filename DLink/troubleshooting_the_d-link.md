@@ -1,5 +1,4 @@
 # Troubleshooting the D-Link
-<<<<<<< HEAD
 * Ensure that all necessary cables (Power and/or Ethernet cables) are plugged in securely. <br />
 * Ensure that the switch on the back of the router is set to “AP 2.4 GHz” unless you have specifically set the router and its configuration to a different mode. <br />
 * Ensure your router is not labeled BROKEN with electrical tape.(Team specific) <br />
@@ -14,5 +13,3 @@
 [Getting Started with the 2013 FRC Control System](http://www.mililanirobotics.org/Documentation/electrical/2013FRCControlSystem.pdf)
 [D-Link DAP-1522 User Manual](http://www.mililanirobotics.org/Documentation/electrical/DAP-1522%20User%20Manual.pdf)
 [AndyMark Product Page](http://www.andymark.com/DAP-1522-REV-B-p/am-0839.htm)
-=======
->>>>>>> FETCH_HEAD
