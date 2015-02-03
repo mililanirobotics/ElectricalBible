@@ -62,4 +62,5 @@
    * [Pneumatics Code](Pneumatics/pneumatics_code)
 * [Appendixes](Appendixes/README.md)
    * [Appendix A: General Wiring Diagram](Appendixes/appendix_a_general_wiring_diagram)
+* [Changelog](CHANGELOG.md)
 
