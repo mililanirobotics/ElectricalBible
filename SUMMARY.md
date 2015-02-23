@@ -8,16 +8,13 @@
    * [Uploading Code to the roboRIO](roboRIO/uploading_code_to_the_roborio.md)
    * [The CAN Bus](roboRIO/the_can_bus.md)
 * [The Power Distribution Board (PDP)](PDP/README.md)
-<<<<<<< HEAD
    * [120A Circuit Breaker](pdp/120a_circuit_breaker.md)
    * [The Voltage Regulator Module](pdp/the_voltage_regulator_module.md)
 * [The D-Link](dlink/README.md)
    * [The Physical Layer](dlink/the_physical_layer.md)
    * [Configuration](dlink/configuration.md)
    * [Troubleshooting the D-Link](dlink/troubleshooting_the_d-link.md)
-=======
    * [Wiring](PDP/wiring.md)
->>>>>>> FETCH_HEAD
    * [120A Circuit Breaker](PDP/120a_circuit_breaker.md)
    * [The Voltage Regulator Module](PDP/the_voltage_regulator_module.md)
    * [The Power Converter](PDP/the_power_converter)
@@ -26,7 +23,6 @@
    * [Configuration](DLink/configuration.md)
    * [Troubleshooting the D-Link](DLink/troubleshooting_the_d-link.md)
 * [Driver Station](Driver_Station/README.md)
-<<<<<<< HEAD
    * [Introduction](Driver_Station/introduction.md)
    * [The Interface](Driver_Station/the_interface.md)
    * [Printing to Driver Station](Driver_Station/printing_to_Driver_Station.md)
@@ -35,7 +31,6 @@
    * [Functions](CPP/functions.md)
    * [Object Usage](CPP/object_usage.md)
    * [The Joystick](CPP/the_joystick.md)
-=======
    * [Introduction](Driver_Station/introduction)
    * [The Interface](Driver_Station/the_interface)
    * [Tab Selection](Driver_Station/tab_selection)
@@ -45,7 +40,6 @@
    * [Functions](C++/functions)
    * [Object Usage](c++/object_usage.md)
    * [The Joystick](C++/the_joystick)
->>>>>>> FETCH_HEAD
 * [Motor Controllers](Motor_Controllers/README.md)
    * [General Overview](Motor_Controllers/general_overview.md)
    * [Motors](Motor_Controllers/motors.md)
@@ -56,10 +50,10 @@
    * [Spike](Motor_Controllers/spike.md)
    * [Fans](Motor_Controllers/fans.md)
 * [Drive Code](Drive_Code/README.md)
-   * [Box on Wheels](Drive_Code/box_on_wheels)
+   * [Box on Wheels](drive_code/box_on_wheels.md)
    * [Box on Wheels Template vs Custom Program](Drive_Code/box_on_wheels_template_vs_custom_program)
    * [Cutsom Program (Tank Drive)](Drive_Code/cutsom_program_tank_drive)
-   * [Custom Program (Mecanum Drive)](Drive_Code/custom_program_mecanum_drive)
+   * [Custom Program (Mecanum Drive)](Drive_Code/custom_program_mecanum_drive.md)
 * [Sensors](Sensors/README.md)
    * [roboRIO Accelerometer](sensors/roborio_accelerometer.md)
    * [Microswitch](Sensors/microswitch)
