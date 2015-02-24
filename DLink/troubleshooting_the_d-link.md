@@ -9,7 +9,11 @@
 
 ####Additional Resources <br />
 [Getting Started with the 2015 Control System](http://www.google.com/url?q=http%3A%2F%2Fwpilib.screenstepslive.com%2Fs%2F3120%2Fm%2F8559%2Fl%2F91405-programming-your-radio-for-home-use&sa=D&sntz=1&usg=AFQjCNFLhBihSjsyFtyx-v0KWLbu8OZgOw)
+
 [WPILib - Getting Started with the 2014 FRC Control System](http://wpilib.screenstepslive.com/s/3120/m/8559)
+
 [Getting Started with the 2013 FRC Control System](http://www.mililanirobotics.org/Documentation/electrical/2013FRCControlSystem.pdf)
+
 [D-Link DAP-1522 User Manual](http://www.mililanirobotics.org/Documentation/electrical/DAP-1522%20User%20Manual.pdf)
+
 [AndyMark Product Page](http://www.andymark.com/DAP-1522-REV-B-p/am-0839.htm)
