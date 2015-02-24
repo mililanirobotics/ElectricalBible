@@ -1,5 +1,11 @@
 # Changelog
 
+##### February 23, 2015, *modified by Vivian*
+* Added Drive Code
+* Fixed Table of Contents
+
+<hr />
+
 ##### February 5, 2015, *modified by Vivian*
 * Added Driver Station Documentation
 * Added Motor Controller Documentation
