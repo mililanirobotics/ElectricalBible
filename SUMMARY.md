@@ -7,6 +7,7 @@
    * [Connecting to the roboRIO Wirelessly](roboRIO/connecting_to_the_roborio_wirelessly.md)
    * [Uploading Code to the roboRIO](roboRIO/uploading_code_to_the_roborio.md)
    * [The CAN Bus](roboRIO/the_can_bus.md)
+   * [The Robot Signal Light](roboRIO/the_rsl.md)
 * [The Power Distribution Board (PDP)](PDP/README.md)
    * [120A Circuit Breaker](pdp/120a_circuit_breaker.md)
    * [The Voltage Regulator Module](pdp/the_voltage_regulator_module.md)
