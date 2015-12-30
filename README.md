@@ -10,3 +10,5 @@ Something to note is that we program in C++, so references to classes like “En
 
 Team 2853
 Electrical/Programming Team
+
+*If you are viewing this on GitHub, please use the GitBook link: https://mililanirobotics.gitbooks.io/frc-electrical-bible/content/index.html*
