@@ -21,4 +21,4 @@
 
 ➠ Wireless Settings
 
-### 3.4 Troubleshooting the D-Link
+### [3.4 Troubleshooting the D-Link](troubleshooting_the_d-link.md)
