@@ -37,7 +37,8 @@ It is easiest if the optical encoder is placed on the output shaft as there is a
 The optical encoder can get scratched easily so it should be stored in a special case to prevent scratching or in a place that will not scratch the surface of the disk. 
 
 ### ➠ Wiring
-The wiring for the optical encoder uses two channels (Digital IO; A/B) for the PDP so four wires have to be soldered to two PWMs. 
+The wiring for the optical encoder uses two channels (Digital IO; A/B) for the PDP so four wires have to be soldered to two PWMs.
+
 Orange: Power-------------------------------> PWM 2 Power
 
 Blue: Channel A------------------------------> PWM 1 Signal
