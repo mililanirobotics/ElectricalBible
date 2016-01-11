@@ -1,4 +1,4 @@
-# Configuration
+# Automatic Configuration
 ###➠ 2015 Configuration Prerequisites
 1. Make sure that the router is switched to the Access Point mode you request (2.4 Ghz, 5.0 Ghz, Bridge). A setting of 2.4 Ghz is appropriate for most FRC teams and should be used as the default.
 2. Ensure that your computer has Java installed. If you’re unsure or need to check or download the Java software, use this link: http://www.java.com/en/download/index.jsp
