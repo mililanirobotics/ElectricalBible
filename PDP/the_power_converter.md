@@ -5,5 +5,4 @@ Although we have the voltage regulator module, if you are looking to power > 1 c
 
 **Wiring the Power Converter**
 ![](./wiringcamera.png)
-
 ![](./dlink.png)
