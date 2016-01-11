@@ -9,14 +9,14 @@
 
 ➠ The Explanation
 
-#### 8.2 Micro Switch
+#### [8.2 Micro Switch](microwitch.md)
 ➠ Use
 
 ➠ Wiring
 
 ➠ Programming
 
-#### 8.3 Optical Encoder
+#### [8.3 Optical Encoder](opticalencoder.md)
 ➠ Use
 
 ➠ Assembly
@@ -29,7 +29,7 @@
 
 ➠ Programming
 
-#### 8.4 The Gyro
+#### [8.4 The Gyro](gyro.md)
 ➠ General Overview
 
 ➠ Specifications
