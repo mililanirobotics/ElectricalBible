@@ -409,7 +409,7 @@ class RobotDemo : public SimpleRobot {
     Joystick stickOne; // Logitech Gamepad Controller
 ```
 
-Here we instantiate the four motor controllers we are using to manipulate the 4 mecanum wheels on the robot under the Victor class (here we used Victor motor controllers). We also instantiated our two joysticks that will be controlling the motion of the robots
+Here we instantiate the four motor controllers we are using to manipulate the 4 mecanum wheels on the robot under the `Victor` class (here we used Victor motor controllers). We also instantiated our two joysticks that will be controlling the motion of the robots
 
 ```c++
 public:
@@ -424,7 +424,7 @@ public:
     }
 ```
 
-Here, we further define our constructors by associating each piece of hardware to their respective ports. The Victor Class, which is a category of motor controllers, utilize PWM ports while the Joystick Class utilized for the Logitec Attack 3 utilizes the driversation ports.
+Here, we further define our constructors by associating each piece of hardware to their respective ports. The `Victor` Class, which is a category of motor controllers, utilize PWM ports while the Joystick Class utilized for the Logitech Attack 3 utilizes the driver-station ports.
 
 ```c++
     void OperatorControl() {
@@ -450,7 +450,7 @@ while (IsOperatorControl()) {
 			x = stickTwo.GetRawAxis(1); // x-axis threshold
 ```
 
-This section serves two main purposes. The first one is setting a threshold for all axes of motion. The joysticks must be pushed past a value of .2 in order for its value to be considered valid. This is meant to prevent the robot from drifting due to the joystick not perfectly resting at 0. The second function is to assign each axis of motion to a joystick direction. In our scenario, we preferred to make pushing stickOne left and right rotate the vehicle counter clockwise and clockwise repsectively. Pushing stickOne forwards and backwards correlates to forwards and backwards motion. Pushing stickTwo to the right and left correlates to strafing right and left.
+This section serves two main purposes. The first one is setting a threshold for all axes of motion. The joysticks must be pushed past a value of .2 in order for its value to be considered valid. This is meant to prevent the robot from drifting due to the joystick not perfectly resting at 0. The second function is to assign each axis of motion to a joystick direction. In our scenario, we preferred to make pushing `stickOne` left and right rotate the vehicle counter clockwise and clockwise respectively. Pushing `stickOne` forwards and backwards correlates to forwards and backwards motion. Pushing `stickTwo` to the right and left correlates to strafing right and left.
 
 ```c++
         //y-axis motion
@@ -463,7 +463,7 @@ This section serves two main purposes. The first one is setting a threshold for 
 		}
 ```
 
-The first line is dedicated to determining if the y-component (front and back) of stickOne’s position is greater in magnitude than its z-component (left and right) and stickTwo’s x-component (left and right). This is meant to make the robot only move in one direction at a time. The rest of the block is dedicated to making the robot move forward and backwards. Since all wheels rotate in the same direction, nothing needs to be flipped.
+The first line is dedicated to determining if the y-component (front and back) of `stickOne`’s position is greater in magnitude than its z-component (left and right) and `stickTwo`’s x-component (left and right). This is meant to make the robot only move in one direction at a time. The rest of the block is dedicated to making the robot move forward and backwards. Since all wheels rotate in the same direction, nothing needs to be flipped.
 
 ```c++
         // x-axis motion
@@ -485,7 +485,7 @@ The first line is dedicated to determining if the y-component (front and back) o
 			}
 ```
 
-Much like the top, this section is only activated when the x-component of stickTwo’s position is larger than any of stickOne’s. However, this section is different as our robot would rotate slightly clockwise and drift slightly backwards. To address this, we had to manually add multipliers to certain motors to make them move slower or faster at certain intervals. We also had to separate left strafing and right strafing because they behaved differently. In the block above, we only see the right strafing portion of the code. This section is subdivided into two more sections, when the wheels are supplied at least half of their maximum voltage (>=.5) and when they are supplied only a little bit of voltage (.5 > v > 0.35). This was due to our drive reacting differently at different voltages. You’ll see multipliers like 1.1, -0.95 and 0.9 in the above code, this is because some wheels were rotating slower / faster than others. Multipliers with magnitudes below 1 are meant to slow the speed of that specific motor. Multipliers with magnitudes above 1 are meant to speed them up. Different signs (+ or -) are meant to reverse the direction of the wheel in order for the vectors to make the card move in the desired direction.
+Much like the top, this section is only activated when the x-component of `stickTwo`’s position is larger than any of `stickOne`’s. However, this section is different as our robot would rotate slightly clockwise and drift slightly backwards. To address this, we had to manually add multipliers to certain motors to make them move slower or faster at certain intervals. We also had to separate left strafing and right strafing because they behaved differently. In the block above, we only see the right strafing portion of the code. This section is subdivided into two more sections, when the wheels are supplied at least half of their maximum voltage (>=.5) and when they are supplied only a little bit of voltage (.5 > v > 0.35). This was due to our drive reacting differently at different voltages. You’ll see multipliers like 1.1, -0.95 and 0.9 in the above code, this is because some wheels were rotating slower / faster than others. Multipliers with magnitudes below 1 are meant to slow the speed of that specific motor. Multipliers with magnitudes above 1 are meant to speed them up. Different signs (+ or -) are meant to reverse the direction of the wheel in order for the vectors to make the card move in the desired direction.
 
 ```c++
             else if(x < 0) {
@@ -517,7 +517,7 @@ This is the same as the portion before this, but for strafing to the left. Since
         }
 ```
 
-This section of the code is for rotating the robot. Again, this is activated only when the magnitude of stickOne’s z-component (how much to the left or right it is) is larger than both the x and y components. In order to rotate, the right sight must always be going the direction opposite of where the joystick tells it to. This is why they have a -1 applied in their statements. Pushing stickOne to the right makes the robot rotate clockwise and pushing it to the left makes it rotate counterclockwise.
+This section of the code is for rotating the robot. Again, this is activated only when the magnitude of `stickOne`’s z-component (how much to the left or right it is) is larger than both the x and y components. In order to rotate, the right sight must always be going the direction opposite of where the joystick tells it to. This is why they have a -1 applied in their statements. Pushing `stickOne` to the right makes the robot rotate clockwise and pushing it to the left makes it rotate counterclockwise.
 
 ```c++
         //turn left when pressing 5
