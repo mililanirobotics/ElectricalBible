@@ -15,8 +15,7 @@ There are jumpers that can be used in two places, the motor coast/brake, and the
 ```c++
 #include "WPILib.h"
 
-class RobotDemo : public SampleRobot
-{
+class RobotDemo : public SampleRobot {
     Jaguar jaguar;
     Joystick stick;
 
@@ -27,18 +26,14 @@ public:
         {
         }
 
-    void OperatorControl()
-    {
-        if(stick.GetRawButton(1))
-        {
+    void OperatorControl() {
+        if(stick.GetRawButton(1)) {
             jaguar.Set(1.0);
         }
-        else if(stick.GetRawButton(2))
-        {
+        else if(stick.GetRawButton(2)) {
             jaguar.Set(-1.0);
         }
-        else
-        {
+        else {
             jaguar.Set(0);
         }
     }
@@ -60,18 +55,14 @@ jaguar(1),
 Initialize Jaguar motor controller as port # 1 in Digital Sidecar (PWM Out), initialized between `public : RobotDemo` and the braces({ }). If it is not the last object initialized, it needs a comma like a list. If it is the last object initialized, no punctuation; no comma, no semicolon, no period, etc. or you will get an error.
 
 ```c++
-void OperatorControl()
-{
-    if(stick.GetRawButton(1))
-    {
+void OperatorControl() {
+    if(stick.GetRawButton(1)) {
         jaguar.Set(1.0);
     }
-    else if(stick.GetRawButton(2))
-    {
+    else if(stick.GetRawButton(2)) {
         jaguar.Set(-1.0);
     }
-    else
-    {
+    else {
         jaguar.Set(0);
     }
 }
