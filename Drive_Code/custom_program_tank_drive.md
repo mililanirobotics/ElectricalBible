@@ -6,8 +6,7 @@ An example of where the driver uses the Logitech F310 Gamepad, but because of th
 #include "WPILib.h"	// WPILibrary.h
 #include "Math.h"	// Math.h required for fabs function
 //Last modified: January 30, 2014 by: Alan
-class RobotDemo : public SampleRobot
-{
+class RobotDemo : public SampleRobot {
 	Talon frontLeft, frontRight, backLeft, backRight; //Talon Motor Controllers
 	Joystick logitech; 	// Logitech F310 Gamepad/Controller
 
@@ -29,34 +28,29 @@ public:
 		backRight.SetExpiration(0.1);
 	}
 
-	void Autonomous(void)
-	{
+	void Autonomous(void) {
 	}
 
 	/**
 	 * Runs the motors with tank steering
 	 */
-	void OperatorControl(void)
-	{
-		while (IsOperatorControl())
-		{
-			if(fabs(logitech.GetRawAxis(2)) > 0.2)	/*left joystick, forward & back*/
-			{
-				frontLeft.Set(logitech.GetRawAxis(2) * -.65);
+	void OperatorControl(void) {
+		while (IsOperatorControl()) {
+			if(fabs(logitech.GetRawAxis(2)) > 0.2) {
+			    /*left joystick, forward & back*/	
+			    frontLeft.Set(logitech.GetRawAxis(2) * -.65);
 				backLeft.Set(logitech.GetRawAxis(2) * -.65);
 			}
-			else
-			{
+			else {
 				frontLeft.Set(0);
 				backLeft.Set(0);
 			}
-			if(fabs(logitech.GetRawAxis(4)) > 0.2)				/*right joystick, forward & back*/
-			{
-				frontRight.Set(logitech.GetRawAxis(4) * .65);
+			if(fabs(logitech.GetRawAxis(4)) > 0.2) {
+			    /*right joystick, forward & back*/ 
+			    frontRight.Set(logitech.GetRawAxis(4) * .65);
 				backRight.Set(logitech.GetRawAxis(4) * .65);
 			}
-			else
-			{
+			else {
 				frontRight.Set(0);
 				backRight.Set(0);
 			}
@@ -68,8 +62,7 @@ public:
 	 * Runs during test mode
 	 */
 	void Test() {
-		while(IsTest())
-		{
+		while(IsTest()) {
 		}
 	}
 };
@@ -117,8 +110,7 @@ Now in the constructor, the motor controllers are instantiated in the ports of t
 	/**
 	 * Insert own comment
 	 */
-	void Autonomous(void)
-	{
+	void Autonomous(void) {
 	}
 ```
 
@@ -128,27 +120,23 @@ Autonomous code goes here. However this custom program is to show tank drive not
 	/**
 	 * Runs the motors with tank steering
 	 */
-	void OperatorControl(void)
-	{
-		while (IsOperatorControl())
-		{
-			if(fabs(logitech.GetRawAxis(2)) > 0.2)				/*left joystick, forward & back*/
-			{
-				frontLeft.Set(logitech.GetRawAxis(2) * -.65);
+	void OperatorControl(void) {
+		while (IsOperatorControl()) {
+			if(fabs(logitech.GetRawAxis(2)) > 0.2) {
+			    /*left joystick, forward & back*/	
+			    frontLeft.Set(logitech.GetRawAxis(2) * -.65);
 				backLeft.Set(logitech.GetRawAxis(2) * -.65);
 			}
-			else
-			{
+			else {
 				frontLeft.Set(0);
 				backLeft.Set(0);
 			}
-			if(fabs(logitech.GetRawAxis(4)) > 0.2)				/*right joystick, forward & back*/
-			{
-				frontRight.Set(logitech.GetRawAxis(4) * .65);
+			if(fabs(logitech.GetRawAxis(4)) > 0.2) {
+			    /*right joystick, forward & back*/ 	
+			    frontRight.Set(logitech.GetRawAxis(4) * .65);
 				backRight.Set(logitech.GetRawAxis(4) * .65);
 			}
-			else
-			{
+			else {
 				frontRight.Set(0);
 				backRight.Set(0);
 			}
@@ -164,8 +152,7 @@ This here is the juicy part, this is tank drive. For those who do not know tank 
 	 * Runs during test mode
 	 */
 	void Test() {
-		while(IsTest())
-		{
+		while(IsTest()) {
 		}
 	}
 };
