@@ -9,10 +9,12 @@ The gyro accepts a +5V for power, can record up to 250 O/s, has a nominal output
 
 ### ➠ Wiring
 
-Wires to the roboRIO Analog IN ports using a female-to-female PWM. Ground, Power, Signal from outside in respectively.  
+Wires to the roboRIO Analog IN ports using a female-to-female PWM. Ground, Power, Signal from outside in respectively.
+
 ![](gyro_roborio.png)
 
-Wires to the Gyro sensor with the other end of the female-to-female PWM. Ground, Power, Signal from outside in respectively
+Wires to the Gyro sensor with the other end of the female-to-female PWM. Ground, Power, Signal from outside in respectively.
+
 ![](gyro_wiring.jpg)
 
 ### ➠ Programming
