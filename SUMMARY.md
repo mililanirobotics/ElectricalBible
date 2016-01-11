@@ -43,7 +43,7 @@
 * [Sensors](Sensors/README.md)
    * [roboRIO Accelerometer](sensors/roborioaccelerometer.md)
    * [Microswitch](Sensors/microswitch.md)
-   * [Optical Encoder](Sensors/optical_encoder.md)
+   * [Optical Encoder](Sensors/opticalencoder.md)
    * [Gyro](Sensors/gyro.md)
 * [Camera](Camera/README.md)
    * [Hardware](camera/hardware.md)
