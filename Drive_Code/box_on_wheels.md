@@ -12,9 +12,7 @@ The drive program in it’s entirety:
  This is a demo program showing the use of the RobotBase class.The SampleRobot class is the base of a robot application that will automatically call your
  Autonomous and OperatorControl methods at the right time as controlled by the switches on the driver station or the field controls.
  */
-class RobotDemo : public SampleRobot
-
-{
+class RobotDemo : public SampleRobot {
     RobotDrive myRobot;	// robot drive system
     Joystick stick;	// only joystick
 
@@ -28,29 +26,25 @@ public:
 
 // Drive left & right motors for 2 seconds then stop
 
-	void Autonomous(void)
-	{
+	void Autonomous(void) {
 		myRobot.SetSafetyEnabled(false);
 		myRobot.Drive(0.5, 0.5);	// drive forward at half speed
-		Wait(2);				// for 2 seconds
+		Wait(2);				    // for 2 seconds
 		myRobot.Drive(0.0, 0.0);	// stop robot
 	}
 
 // Runs the motors with arcade steering
-	void OperatorControl(void)
-	{
+	void OperatorControl(void) {
 		myRobot.SetSafetyEnabled(true);
 		while (IsOperatorControl())
 		{
-			myRobot.ArcadeDrive(stick); // drive with arcade style (use
-								 right stick)
-		Wait(0.005);		    // wait for a motor update time
+			myRobot.ArcadeDrive(stick); // drive with arcade style (use right stick)
+		Wait(0.005); // wait for a motor update time
 	}
 }
 
 // Runs during test mode
-    void Test()
-    {
+    void Test() {
 
     }
 };
@@ -84,7 +78,7 @@ This is your physical robot, RobotDemo is the name of the class, SampleRobot is 
 
 {
 	RobotDrive myRobot;	// robot drive system
-	Joystick stick;	// only joystick
+	Joystick stick;	    // only joystick
 ```
 
 Declaration of the robots parts, `RobotDrive` is a simplified drive system class that declares motors for you and has preprogrammed drive functions; `Joystick` also declared last because it is a part of the robot, but how else are you going to control it? With your mind? I THINK NOT!
@@ -93,7 +87,7 @@ Declaration of the robots parts, `RobotDrive` is a simplified drive system class
 public:
 		RobotDemo(void):
         myRobot(1, 2),	// these must be initialized in the same order
-        stick(1)		// as they are declared above.
+        stick(1)		  // as they are declared above.
 	{
 		myRobot.SetExpiration(0.1), //you can initialize things here like gyros at construction
 	}
@@ -103,8 +97,7 @@ public:
 
 ```c++
 // Drive left & right motors for 2 seconds then stop
-	void Autonomous(void)
-	{
+	void Autonomous(void) {
 		myRobot.SetSafetyEnabled(false);
 		myRobot.Drive(0.5, 0.5);	// drive forward at half speed
 		Wait(2);				// for 2 seconds
@@ -116,23 +109,20 @@ This is the `Autonomous` method of the `RobotDemo` class, and it was inherited f
 
 ```c++
 // Runs the motors with arcade steering
-	void OperatorControl(void)
-	{
+	void OperatorControl(void) {
 		myRobot.SetSafetyEnabled(true);
-		while (IsOperatorControl())
-		{
+		while (IsOperatorControl()) {
 			myRobot.ArcadeDrive(stick); //drive with arcade style (use right stick)
 		    Wait(0.005);	// wait for a motor update time
-	}
-}
+	    }
+    }
 ```
 
 `OperatorControl` is a method of the `RobotDemo` class, this method was also inherited from `SampleRobot`. This is where the code for your tele-op or driver control period goes. `SetSafetyEnabled` was already mentioned, but as a reminder, it’s for the safety of all others and the robot in case of communication problems with the robot. The while loop is there to make sure that you are always in control during the period, without the loop, the code would only run once and your robot would then become a stationery box. `ArcadeDrive` is the type of drive using arcade joystick, the robot will move according to the joystick input.
 
 ```c++
 // Runs during test mode
-	void Test()
-    {
+	void Test() {
 
     }
 ```
