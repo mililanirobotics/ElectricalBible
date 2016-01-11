@@ -2,12 +2,14 @@
 
 ### ➠ Use
 ![](microswitch.jpg)
+
 The microswitch is usually used to keep something from overextending or surpassing some distance. When the switch not pushed, the switch is NC (normally closed), returning 1. When the switch pushed, the switch is  NO (Normally Open), returning 0.
 
 
 ### ➠ Wiring 
 ![](microswitchwiringdiagram.png)
 ![](microswitchwiring.png)
+
 The switch is plugged into the Digital IO section of the roboRIO via a PWM cable.
 
 ### ➠ Programming
