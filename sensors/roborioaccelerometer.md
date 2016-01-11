@@ -17,18 +17,16 @@ This is the code we used to determine the direction of each axis as well as the 
 ```c++
 #include "WPILib.h"
 
-class Robot: public SampleRobot
-{
+class Robot: public SampleRobot {
 	BuiltInAccelerometer accelerometer;
 
 	const double kUpdatePeriod = 0.005; // 5milliseconds / 0.005 seconds.
 public:
 	//sets the range of the accelerometer to be + or - 8G (units of gravity)
-	Robot() : accelerometer(Accelerometer::Range::kRange_8G)
-	{
+	Robot() : accelerometer(Accelerometer::Range::kRange_8G) {
+	
 	}
-	void OperatorControl()
-	{
+	void OperatorControl() {
 		double xAcceleration;	//acceleration on the x-axis
 		double yAcceleration;	//acceleration on the y-axis	
 		double zAcceleration;	//acceleration on the z-axis
@@ -36,8 +34,7 @@ public:
 		double previousY = 0;	//Previous recursive average on y-axis
 		double previousZ = 1;	//Previous recursive average on z-axis
 
-		while (IsOperatorControl() && IsEnabled())
-		{
+		while (IsOperatorControl() && IsEnabled()) {
 			xAcceleration = accelerometer.GetX(); //returns x-axis accel
 			yAcceleration = accelerometer.GetY(); //returns y-axis accel
 			zAcceleration = accelerometer.GetZ(); //returns z-axis accel
@@ -73,16 +70,15 @@ Declare the RoboRIO accelerometer as BuiltInAccelerometer;  declared between `pu
 ```c++
 public:
 	//sets the range of the accelerometer to be + or - 8G (units of gravity)
-	Robot() : accelerometer(Accelerometer::Range::kRange_8G)
-	{
+	Robot() : accelerometer(Accelerometer::Range::kRange_8G) {
+	
 	}
 ```
 
 Initializes the roboRIO accelerometer with a range of +/- 8Gs, which is the acceleration in units of gravity (9.81m/s). This is the maximum range that the device is capable of. There is no need to input pwm ports as the accelerometer is built in.
 
 ```c++
-void OperatorControl()
-	{
+void OperatorControl() {
 		double xAcceleration;	//acceleration on the x-axis
 		double yAcceleration;	//acceleration on the y-axis	
 		double zAcceleration;	//acceleration on the z-axis
@@ -94,8 +90,7 @@ void OperatorControl()
 In this section we initialize the variables that we will be using for output on the SmartDashboard. Since the accelerometer has 3 axes, we need a variable for each one (x, y, and z). The previous axis variables are used to determine a recursive average that is explained later in this document. They are meant to store the value of the recursive average of all previously returned values. `previousX` and `previousY` are equal to 0 because that is the expected value when the roboRIO is at rest and on a perfectly horizontal surface. `previousZ` is equal to 1 because the roboRIO is not in freefall, which is what an accelerometer measures acceleration in reference to.
 
 ```c++
-while (IsOperatorControl() && IsEnabled())
-	{
+    while (IsOperatorControl() && IsEnabled()) {
 		xAcceleration = accelerometer.GetX(); //returns x-axis accel
 		yAcceleration = accelerometer.GetY(); //returns y-axis accel
 		zAcceleration = accelerometer.GetZ(); //returns z-axis accel
