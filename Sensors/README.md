@@ -1,6 +1,6 @@
-# Sensors
+# 8. Sensors
 
-#### The roboRIO accelerometer
+#### 8.1 The roboRIO accelerometer
 ➠ General Overview
 
 ➠ Specifications
@@ -9,14 +9,14 @@
 
 ➠ The Explanation
 
-#### Micro Switch
+#### 8.2 Micro Switch
 ➠ Use
 
 ➠ Wiring
 
 ➠ Programming
 
-#### Optical Encoder
+#### 8.3 Optical Encoder
 ➠ Use
 
 ➠ Assembly
@@ -29,7 +29,7 @@
 
 ➠ Programming
 
-#### The Gyro
+#### 8.4 The Gyro
 ➠ General Overview
 
 ➠ Specifications
