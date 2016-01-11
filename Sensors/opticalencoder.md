@@ -14,21 +14,21 @@ The optical encoder is the most common type of encoder in FRC that uses one or m
 
 ### ➠ Assembly
 1. Place base over shaft. Secure base to mounting surface using either the two screws on the base or a mounting pad.
-![](oe_step1.png)
+##### ![](oe_step1.png)
 ##### *Mounting the base without a mount pad*
-![](oe_mount.jpg)
+![](oe_mount.png)
 ##### *Mounting pad placed under the base if used.*
 
 2. Place hub disk assembly onto shaft with pattern-side down towards base. It should not be completely pressed down.
-![](oe_step2.png)
+##### ![](oe_step2.png)
 
 3. Use the spacer (lip facing downwards) to push the hub disk assembly to the appropriate location on the shaft. The disk should not be touching anything besides the shaft and the spacer, and there should be a considerable gap between the disk and the base.
-![](oe_step3.png)
+##### ![](oe_step3.png)
 
 4. Remove the spacer while ensuring that the disk stays in place.
 
 5. Place the housing on top of the encoder. Using your thumb and finger, squeeze ears together to ensure that the cover fully latches.
-![](oe_step4.png)
+##### ![](oe_step4.png)
 
 ### ➠ Mounting
 It is easiest if the optical encoder is placed on the output shaft as there is a direct correlation between the rotation of the shaft and the movement of whatever it controls. Also ensure that the optical encoder is perfectly centered around the shaft.
@@ -47,6 +47,7 @@ Brown: Ground-------------------------------> PWM 2 Ground
 Yellow:	Channel B----------------------------> PWM 2 Signal
 
 ![](oe_pwm.png)
+
 ![](oe_roborio.png)
 
 ### ➠ Programming
