@@ -60,8 +60,7 @@ Wheels 2 and 4 are rotating forward, Wheels 1 and 3 are rotating backward to all
 #include "WPILib.h"
 #include “Math.h”
 
-class RobotDemo : public SampleRobot
-{
+class RobotDemo : public SampleRobot {
     Victor leftFront; // Initializing motor 1; front-left motor
     Victor leftBack; // Initializing motor 3; back-left motor
     Victor rightFront;// Initializing motor 2; front-right motor
@@ -78,14 +77,12 @@ public:
     {
     }
 
-    void OperatorControl()
-    {
+    void OperatorControl() {
     	  int leftFrontPolarity = 1; // These variables flip the sign value of
     	  int leftBackPolarity = 1; // the motors in the situation that they are
     	  int rightFrontPolarity = -1; // flipped
     	  int rightBackPolarity = -1;
-    	  while (IsOperatorControl())
-    	  {
+    	  while (IsOperatorControl()) {
             float x = 0; // x-axis motion-right (+), left (-)
             float y = 0; // y-axis motion-forward (+), backward (-)
             float z = 0; // z-axis motion-clockwise (+), counterclockwise (-)
@@ -96,33 +93,30 @@ public:
             if (fabs(stickTwo.GetRawAxis(1)) > .2)
 				x = stickTwo.GetRawAxis(1); // x-axis threshold
 
-		// y-axis motion
-            if (fabs(y) > fabs(x) && fabs(y) > fabs(z)) //Activates if y is largest
-			{
+		    // y-axis motion
+            if (fabs(y) > fabs(x) && fabs(y) > fabs(z)) //Activates if y is largest {
 				leftFront.Set(y * leftFrontPolarity);
 				rightFront.Set(y * rightFrontPolarity);
             	leftBack.Set(y * leftBackPolarity);
             	rightBack.Set(y * rightBackPolarity);
 			}
-		// x-axis motion
-            if (fabs(x) > fabs(y) && fabs(x) > fabs(z)) //Activates if x is largest
-			{
+		    // x-axis motion
+            if (fabs(x) > fabs(y) && fabs(x) > fabs(z)) //Activates if x is largest {
 				leftFront.Set(x * leftFrontPolarity);
 				rightFront.Set(x * rightFrontPolarity * -1);
             	leftBack.Set(x * leftBackPolarity * -1);
             	rightBack.Set(x * rightBackPolarity);
 			}
 
-        // z-axis motion
-	        else if (fabs(z) > fabs(y) && fabs(z) > fabs(x))
-            {
+            // z-axis motion
+	        else if (fabs(z) > fabs(y) && fabs(z) > fabs(x)) {
                 leftFront.Set(z * leftFrontPolarity);
                 rightFront.Set(z * rightFrontPolarity * -1);
            	    leftBack.Set(z * leftBackPolarity);
                 rightBack.Set(z * rightBackPolarity * -1);
             }
-            else // Otherwise sticks are not pushed
-            {
+            // Otherwise sticks are not pushed
+            else {
                 leftFront.Set(0);
             	leftBack.Set(0);
                 rightFront.Set(0);
@@ -177,8 +171,7 @@ We further define our constructors by associating each piece of hardware to thei
 These variables are in place to control the polarity of the motors (whether they rotate forwards or backwards when pushing the left and right sticks in a certain direction). This makes it easier to fix the code in the event of a motor being reversed.
 
 ```c++
-    	  while (IsOperatorControl())
-    	  {
+    	  while (IsOperatorControl()) {
              float x = 0; // x-axis motion-right (+), left (-)
              float y = 0; // y-axis motion-forward (+), backward (-)
              float z = 0; // z-axis motion-clockwise (+), counterclockwise (-)
@@ -199,8 +192,7 @@ This section assigns a value to the axes based on the orientation of the thumbst
 
 ```c++
             // y-axis motion
-            if (fabs(y) > fabs(x) && fabs(y) > fabs(z)) //Activates if y is largest
-			{
+            if (fabs(y) > fabs(x) && fabs(y) > fabs(z)) //Activates if y is largest {
 				leftFront.Set(y * leftFrontPolarity);
 				rightFront.Set(y * rightFrontPolarity);
             	leftBack.Set(y * leftBackPolarity);
@@ -211,10 +203,9 @@ This section assigns a value to the axes based on the orientation of the thumbst
 If the left stick is pushed more on it’s y-axis (forward / backward) than it or the right stick is pushed on their x-axis, then the robot will move forward or backwards depending on the direction of the thumbstick. Pushing forward will make all wheels rotate forward and pushing backwards makes all wheels rotate backward. Also, the speed of the motors depends on how much the left thumbstick is pushed along the y-axis.
 
 ```c++
- 		// x-axis motion
+ 		    // x-axis motion
             if (fabs(x) > fabs(y) && fabs(x) > fabs(z))
-             //Activates if x is largest
-			{
+             //Activates if x is largest {
 				leftFront.Set(x * leftFrontPolarity);
 				rightFront.Set(x * rightFrontPolarity * -1);
             	leftBack.Set(x * leftBackPolarity * -1);
@@ -224,9 +215,8 @@ If the left stick is pushed more on it’s y-axis (forward / backward) than it o
 If the right stick’s x-axis magnitude is greater than any of the left stick’s axes, then the robot will strafe either right or left. Pushing the thumbstick to the right makes the left front and right back motors rotate forward while the other two reverse (used the vector diagram to determine direction). Pushing the thumbstick to the left makes the opposite happen, with the right front and left back rotating forward while the left front and right back reverse. Again, the speed of the motors depends on how large the magnitude of the right thumbstick’s x-axis is.
 
 ```c++
-// z-axis motion
-	else if (fabs(z) > fabs(y) && fabs(z) > fabs(x))
-            {
+            // z-axis motion
+	        else if (fabs(z) > fabs(y) && fabs(z) > fabs(x)) {
                 leftFront.Set(z * leftFrontPolarity);
                 rightFront.Set(z * rightFrontPolarity * -1);
            	    leftBack.Set(z * leftBackPolarity);
@@ -237,8 +227,7 @@ If the right stick’s x-axis magnitude is greater than any of the left stick’
 If the magnitude of the left stick’s x-axis is greater than it’s own y-axis and the right thumbsticks x-axis, then the robot will rotate. If the left stick is pushed to the right, the left wheels will rotate forward and the right wheels will rotate backwards, making it turn clockwise, much like tank drive. The opposite happens when you push the stick to the left.
 
 ```c++
-             else
-             {
+             else {
             	    leftFront.Set(0);
             	    leftBack.Set(0);
             	    rightFront.Set(0);
@@ -266,8 +255,7 @@ This code is used as a simplification of the one posted earlier. However, there 
 #include "WPILib.h"
 #include "Math.h"
 
-class RobotDemo : public SimpleRobot
-{
+class RobotDemo : public SimpleRobot {
     Victor leftFront; // Initializing motor 1; front-left motor
     Victor leftBack; // Initializing motor 3; back-left motor
     Victor rightFront; // Initializing motor 2; front-right motor
@@ -286,8 +274,7 @@ public:
     {
     }
 
-    void OperatorControl()
-    {
+    void OperatorControl() {
     	DriverStationLCD *screen = DriverStationLCD::GetInstance();
     	int leftFrontPolarity = 1; // These variables flip the sign value of
     	int leftBackPolarity = 1; // the motors in the situation that they are
@@ -296,8 +283,7 @@ public:
     	float x = 0; // x-axis motion-right (+), left (-)
         float y = 0; // y-axis motion-forward (+), backward (-)
         float z = 0; // z-axis motion-clockwise (+), counterclockwise (-)
-    	while (IsOperatorControl())
-    	{
+    	while (IsOperatorControl()) {
             if (fabs(stickOne.GetRawAxis(1)) > .2)
 				z = stickOne.GetRawAxis(1); // z-axis threshold
             if (fabs(stickOne.GetRawAxis(2)) > .2)
@@ -306,46 +292,39 @@ public:
 				x = stickTwo.GetRawAxis(1); // x-axis threshold
 
             // y-axis motion
-            if (fabs(y) > fabs(x) && fabs(y) > fabs(z)) //Activates if y is largest
-			{
+            // Activates if y is largest
+            if (fabs(y) > fabs(x) && fabs(y) > fabs(z)) {
 				leftFront.Set(y * leftFrontPolarity);
 				rightFront.Set(y * rightFrontPolarity);
             			leftBack.Set(y * leftBackPolarity);
             			rightBack.Set(y * rightBackPolarity);
 		    }
             // x-axis motion
-     //Activates when x is largest
-		    else if (fabs(x) > fabs(y) && fabs(x) > fabs(z))
-            {
-			    if(x > 0)
-				{
+            //Activates when x is largest
+		    else if (fabs(x) > fabs(y) && fabs(x) > fabs(z)) {
+			    if(x > 0) {
 				 //Executes if x is greater than deadband of 0.5
-                    if(fabs(x) >= 0.5)
-					{
+                    if(fabs(x) >= 0.5) {
 					    leftFront.Set(x * leftFrontPolarity * 1.1);
 		                rightFront.Set(x * rightFrontPolarity * -0.95);
 		                leftBack.Set(x * leftBackPolarity * -1.1);
 		            	rightBack.Set(x * rightBackPolarity);
 					}
-					else if(fabs(x) > 0.35)
-					{
+					else if(fabs(x) > 0.35) {
 					leftFront.Set(x * leftFrontPolarity * 0.9);
 					rightFront.Set(x * rightFrontPolarity *-0.9);
 					leftBack.Set(x * leftBackPolarity * -1.1);
 					rightBack.Set(x * rightBackPolarity);
 					}
 				}
-				else if(x < 0)
-				{
-					if(fabs(x) >= 0.5)
-					{
+				else if(x < 0) {
+					if(fabs(x) >= 0.5) {
 					    leftFront.Set(x * leftFrontPolarity * 1.05);
                         rightFront.Set(x * rightFrontPolarity * -1);
                         leftBack.Set(x * leftBackPolarity * -1);
                     	rightBack.Set(x * rightBackPolarity);
 					}
-					else if(fabs(x) > 0.35)
-					{
+					else if(fabs(x) > 0.35) {
 						leftFront.Set(x * leftFrontPolarity * 1.1);
 						rightFront.Set(x * rightFrontPolarity * -1);
 						leftBack.Set(x * leftBackPolarity * -1.1);
@@ -353,31 +332,29 @@ public:
 					}
 				}
 			}
-             // z-axis motion
-			else if (fabs(z) > fabs(y) && fabs(z) > fabs(x))
-            {
+            // z-axis motion
+			else if (fabs(z) > fabs(y) && fabs(z) > fabs(x)) {
                 leftFront.Set(z * leftFrontPolarity);
                 rightFront.Set(z * rightFrontPolarity * -1);
            	leftBack.Set(z * leftBackPolarity);
                 rightBack.Set(z * rightBackPolarity * -1);
             }
-			else if(stickOne.GetRawButton(5)) //turn left when pressing 5
-			{
+            //turn left when pressing 5 
+			else if(stickOne.GetRawButton(5)) {
 	        	leftFront.Set(0.5);
 			    rightFront.Set(0.3);
 	        	leftBack.Set(0.3);
 	        	rightBack.Set(0.3);
 			}
-			else if(stickOne.GetRawButton(4)) //turn right when pressing 4
-			{
+			//turn right when pressing 4
+			else if(stickOne.GetRawButton(4)) {
 	        	leftFront.Set(-0.3);
 			    rightFront.Set(-0.5);
 	        	leftBack.Set(-0.3);
 	        	rightBack.Set(-0.5);
 			}
-
-             else // Otherwise sticks are not pushed
-            {
+            // Otherwise sticks are not pushed
+            else {
 				leftFront.Set(0);
 				leftBack.Set(0);
 				rightFront.Set(0);
@@ -393,10 +370,8 @@ public:
             Wait(0.1);
          }
      }
-    void Test()
-    {
-    	while (IsTest())
-    	{
+    void Test() {
+    	while (IsTest()) {
     		// Forward polarity test
     	    if (stickOne.GetRawButton(6))
     			leftFront.Set(.3);
@@ -406,8 +381,7 @@ public:
     			rightFront.Set(-.3);
     		else if (stickOne.GetRawButton(10))
     			rightBack.Set(-.3);
-    		else
-    		{
+    		else {
     			leftFront.Set(0);
     			leftBack.Set(0);
     			rightFront.Set(0);
@@ -426,8 +400,7 @@ Breakdown of the code follows as so:
 ```c++
 #include "WPILib.h"
 
-class RobotDemo : public SimpleRobot
-{
+class RobotDemo : public SimpleRobot {
     Victor leftFront; // Initializing motor 1; front-left motor
     Victor leftBack; // Initializing motor 3; back-left motor
     Victor rightFront;// Initializing motor 2; front-right motor
@@ -454,8 +427,7 @@ public:
 Here, we further define our constructors by associating each piece of hardware to their respective ports. The Victor Class, which is a category of motor controllers, utilize PWM ports while the Joystick Class utilized for the Logitec Attack 3 utilizes the driversation ports.
 
 ```c++
-void OperatorControl()
-    {
+    void OperatorControl() {
     	DriverStationLCD *screen = DriverStationLCD::GetInstance();
     	int leftFrontPolarity = 1; // These variables flip the sign value of
     	int leftBackPolarity = 1; // the motors in the situation that they are
@@ -469,8 +441,7 @@ void OperatorControl()
 The top half of this section is meant to be in preparation for the situation where one or more wheels need to have their polarity (going forwards or backwards) flipped. The bottom half is meant to instantiate and construct the variables that will be representing our various axes of motion. These will be used to control the voltage sent to each individual motor.
 
 ```c++
-while (IsOperatorControl())
-    {
+while (IsOperatorControl()) {
         if (fabs(stickOne.GetRawAxis(1)) > .2)
 			z = stickOne.GetRawAxis(1); // z-axis threshold
         if (fabs(stickOne.GetRawAxis(2)) > .2)
@@ -482,100 +453,94 @@ while (IsOperatorControl())
 This section serves two main purposes. The first one is setting a threshold for all axes of motion. The joysticks must be pushed past a value of .2 in order for its value to be considered valid. This is meant to prevent the robot from drifting due to the joystick not perfectly resting at 0. The second function is to assign each axis of motion to a joystick direction. In our scenario, we preferred to make pushing stickOne left and right rotate the vehicle counter clockwise and clockwise repsectively. Pushing stickOne forwards and backwards correlates to forwards and backwards motion. Pushing stickTwo to the right and left correlates to strafing right and left.
 
 ```c++
-//y-axis motion
-if (fabs(y) > fabs(x) && fabs(y) > fabs(z)) //Activates if y is largest
-			{
-				leftFront.Set(y * leftFrontPolarity);
-				rightFront.Set(y * rightFrontPolarity);
-            	leftBack.Set(y * leftBackPolarity);
-            	rightBack.Set(y * rightBackPolarity);
-			}
+        //y-axis motion
+        //Activates if y is largest
+        if (fabs(y) > fabs(x) && fabs(y) > fabs(z)) {
+			leftFront.Set(y * leftFrontPolarity);
+			rightFront.Set(y * rightFrontPolarity);
+        	leftBack.Set(y * leftBackPolarity);
+        	rightBack.Set(y * rightBackPolarity);
+		}
 ```
 
 The first line is dedicated to determining if the y-component (front and back) of stickOne’s position is greater in magnitude than its z-component (left and right) and stickTwo’s x-component (left and right). This is meant to make the robot only move in one direction at a time. The rest of the block is dedicated to making the robot move forward and backwards. Since all wheels rotate in the same direction, nothing needs to be flipped.
 
 ```c++
-// x-axis motion
-//Activates x when largest
-else if (fabs(x) > fabs(y) && fabs(x) > fabs(z))
-            		{
-				if(x > 0)
-				{
-					if(fabs(x) >= 0.5)
-					{
-					leftFront.Set(x * leftFrontPolarity * 1.1);
-		                	rightFront.Set(x * rightFrontPolarity * -0.95);
-		                   leftBack.Set(x * leftBackPolarity * -1.1);
-		            		rightBack.Set(x * rightBackPolarity);
-					}
-					else if(fabs(x) > 0.35)
-					{
-					leftFront.Set(x * leftFrontPolarity * 0.9);
-					rightFront.Set(x * rightFrontPolarity *-0.9);
-					leftBack.Set(x * leftBackPolarity * -1.1);
-					rightBack.Set(x * rightBackPolarity);
-					}
+        // x-axis motion
+        // Activates x when largest
+        else if (fabs(x) > fabs(y) && fabs(x) > fabs(z)) {
+			if(x > 0) {
+				if(fabs(x) >= 0.5) {
+				leftFront.Set(x * leftFrontPolarity * 1.1);
+	                	rightFront.Set(x * rightFrontPolarity * -0.95);
+	                   leftBack.Set(x * leftBackPolarity * -1.1);
+	            		rightBack.Set(x * rightBackPolarity);
 				}
+				else if(fabs(x) > 0.35) {
+				leftFront.Set(x * leftFrontPolarity * 0.9);
+				rightFront.Set(x * rightFrontPolarity *-0.9);
+				leftBack.Set(x * leftBackPolarity * -1.1);
+				rightBack.Set(x * rightBackPolarity);
+				}
+			}
 ```
 
 Much like the top, this section is only activated when the x-component of stickTwo’s position is larger than any of stickOne’s. However, this section is different as our robot would rotate slightly clockwise and drift slightly backwards. To address this, we had to manually add multipliers to certain motors to make them move slower or faster at certain intervals. We also had to separate left strafing and right strafing because they behaved differently. In the block above, we only see the right strafing portion of the code. This section is subdivided into two more sections, when the wheels are supplied at least half of their maximum voltage (>=.5) and when they are supplied only a little bit of voltage (.5 > v > 0.35). This was due to our drive reacting differently at different voltages. You’ll see multipliers like 1.1, -0.95 and 0.9 in the above code, this is because some wheels were rotating slower / faster than others. Multipliers with magnitudes below 1 are meant to slow the speed of that specific motor. Multipliers with magnitudes above 1 are meant to speed them up. Different signs (+ or -) are meant to reverse the direction of the wheel in order for the vectors to make the card move in the desired direction.
 
 ```c++
-else if(x < 0)
-	{
-		if(fabs(x) >= 0.5)
-		{
-		    leftFront.Set(x * leftFrontPolarity * 1.05);
-            rightFront.Set(x * rightFrontPolarity * -1);
-            leftBack.Set(x * leftBackPolarity * -1);
-	        rightBack.Set(x * rightBackPolarity);
-		}
-		else if(fabs(x) > 0.35)
-		{
-			leftFront.Set(x * leftFrontPolarity * 1.1);
-			rightFront.Set(x * rightFrontPolarity * -1);
-			leftBack.Set(x * leftBackPolarity * -1.1);
-			rightBack.Set(x * rightBackPolarity);
-		}
+            else if(x < 0) {
+		        if(fabs(x) >= 0.5) {
+        		    leftFront.Set(x * leftFrontPolarity * 1.05);
+                    rightFront.Set(x * rightFrontPolarity * -1);
+                    leftBack.Set(x * leftBackPolarity * -1);
+        	        rightBack.Set(x * rightBackPolarity);
+        		}
+    		    else if(fabs(x) > 0.35) {
+        			leftFront.Set(x * leftFrontPolarity * 1.1);
+        			rightFront.Set(x * rightFrontPolarity * -1);
+        			leftBack.Set(x * leftBackPolarity * -1.1);
+        			rightBack.Set(x * rightBackPolarity);
+        		}
+        	}
+        }
 ```
 
 This is the same as the portion before this, but for strafing to the left. Since this motion had different errors that strafing to the right did, we had to edit the multipliers until the robot strafed nicely.
 
 ```c++
-// z-axis motion
-else if (fabs(z) > fabs(y) && fabs(z) > fabs(x))
-  {
-     leftFront.Set(z * leftFrontPolarity);
-     rightFront.Set(z * rightFrontPolarity * -1);
-     leftBack.Set(z * leftBackPolarity);
-     rightBack.Set(z * rightBackPolarity * -1);
-  }
+        // z-axis motion
+        else if (fabs(z) > fabs(y) && fabs(z) > fabs(x)) {
+            leftFront.Set(z * leftFrontPolarity);
+            rightFront.Set(z * rightFrontPolarity * -1);
+            leftBack.Set(z * leftBackPolarity);
+            rightBack.Set(z * rightBackPolarity * -1);
+        }
 ```
 
 This section of the code is for rotating the robot. Again, this is activated only when the magnitude of stickOne’s z-component (how much to the left or right it is) is larger than both the x and y components. In order to rotate, the right sight must always be going the direction opposite of where the joystick tells it to. This is why they have a -1 applied in their statements. Pushing stickOne to the right makes the robot rotate clockwise and pushing it to the left makes it rotate counterclockwise.
 
 ```c++
-else if(stickOne.GetRawButton(5)) //turn left when pressing 5
-			{
-	        	leftFront.Set(0.5);
-			    rightFront.Set(0.3);
-	        	leftBack.Set(0.5);
-	        	rightBack.Set(0.3);
-			}
-else if(stickOne.GetRawButton(4)) //turn right when pressing 4
-			{
-	        	leftFront.Set(-0.3);
-			    rightFront.Set(-0.5);
-	        	leftBack.Set(-0.3);
-	        	rightBack.Set(-0.5);
-			}
+        //turn left when pressing 5
+        else if(stickOne.GetRawButton(5)) {
+        	leftFront.Set(0.5);
+		    rightFront.Set(0.3);
+        	leftBack.Set(0.5);
+        	rightBack.Set(0.3);
+		}
+		//turn right when pressing 4
+        else if(stickOne.GetRawButton(4)) {
+        	leftFront.Set(-0.3);
+		    rightFront.Set(-0.5);
+        	leftBack.Set(-0.3);
+        	rightBack.Set(-0.5);
+		}
 ```
 
 This section of the code is just a quick preset that we found to be useful. They make the robot move forwards and rotate slightly when either the 4 or 5-button is pressed. Pressing the 5-button makes it turn right and pushing the 4-button makes it turn left.
 
-```c++
-else // Otherwise sticks are not pushed
-            {
+```c++ 
+        // Otherwise sticks are not pushed
+        else {
 				leftFront.Set(0);
 				leftBack.Set(0);
 				rightFront.Set(0);
@@ -586,9 +551,9 @@ else // Otherwise sticks are not pushed
 The purpose of this section is to ensure that when the joysticks are at their resting positions or very near it that the motors will not rotate the wheels.
 
 ```c++
-x = 0; // x-axis motion-right (+), left (-)
-y = 0; // y-axis motion-forward (+), backward (-)
-z = 0; // z-axis motion-clockwise (+), counterclockwise (-)
+        x = 0; // x-axis motion-right (+), left (-)
+        y = 0; // y-axis motion-forward (+), backward (-)
+        z = 0; // z-axis motion-clockwise (+), counterclockwise (-)
 ```
 
-Since this portion of the code is outside of the IsOperatorControl while loop, this makes sure that the motors will NOT rotate the wheels when the robot is not under control of the driver.
+Since this portion of the code is outside of the `IsOperatorControl` while loop, this makes sure that the motors will NOT rotate the wheels when the robot is not under control of the driver.
