@@ -15,9 +15,9 @@ The optical encoder is the most common type of encoder in FRC that uses one or m
 ### ➠ Assembly
 1. Place base over shaft. Secure base to mounting surface using either the two screws on the base or a mounting pad.
 ![](oe_step1.png)
-*Mounting the base without a mount pad*
+##### *Mounting the base without a mount pad*
 ![](oe_mount.jpg)
-*Mounting pad placed under the base if used.*
+##### *Mounting pad placed under the base if used.*
 
 2. Place hub disk assembly onto shaft with pattern-side down towards base. It should not be completely pressed down.
 ![](oe_step2.png)
