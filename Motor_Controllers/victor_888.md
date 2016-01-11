@@ -20,8 +20,7 @@ When wiring, make sure that the PWM is plugged in so that the black wire is faci
 ```c++
 #include "WPILib.h"
 
-class RobotDemo : public SampleRobot
-{
+class RobotDemo : public SampleRobot {
     Victor victor;
     Joystick stick;
 public:
@@ -31,18 +30,14 @@ public:
         {
         }
 
-    void OperatorControl()
-    {
-        if(stick.GetRawButton(1))
-        {
+    void OperatorControl() {
+        if(stick.GetRawButton(1)) {
             victor.Set(1.0);
         }
-        else if(stick.GetRawButton(2))
-        {
+        else if(stick.GetRawButton(2)) {
             victor.Set(-1.0);
         }
-        else
-        {
+        else {
             victor.Set(0);
         }
     }
@@ -63,18 +58,14 @@ Declare victor motor controller as `victor`; declared between `public SampleRobo
 Initialize victor motor controller as port # 1 in Digital sidecar PWM Out. This is stated between `public : RobotDemo` and the braces(`{ }`). If it is not the last object initialized, it needs a comma like a list. If it is the last object initialized, no punctuation; no comma, no semicolon, no period, etc. or you will get an error.
 
 ```c++
-void OperatorControl()
-{
-    if(stick.GetRawButton(1))
-    {
+void OperatorControl() {
+    if(stick.GetRawButton(1)) {
         victor.Set(1.0);
     }
-    else if(stick.GetRawButton(2))
-    {
+    else if(stick.GetRawButton(2)) {
         victor.Set(-1.0);
     }
-    else
-    {
+    else {
         victor.Set(0);
     }
 }
