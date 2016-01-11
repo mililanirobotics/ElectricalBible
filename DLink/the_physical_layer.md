@@ -1,6 +1,6 @@
 # The Physical Layer
 ### ➠ The Voltage Regulator Module
-As of the 2015 FRC game, Recycle Rush, the DLink is required to be powered by the 5V/2A AKA “Radio”port on the Voltage Regulator Module. You can read more about it under “The Power Distribution Panel” <br />
+As of the 2015 FRC game, Recycle Rush, the DLink is required to be powered by the 5V/2A AKA “Radio” port on the Voltage Regulator Module. You can read more about it under “The Power Distribution Panel” <br />
 
 ![](./image09.png) <br />
 The D-Link itself is connected to a power adapter that is: <br />
