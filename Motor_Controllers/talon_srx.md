@@ -30,8 +30,7 @@ The Talon SRX is a new iteration of the Talon motor controller series that was i
 ```c++
 #include "WPILib.h"
 
-class RobotDemo : public SampleRobot
-{
+class RobotDemo : public SampleRobot {
     TalonSRX talonsrx;
     Joystick stick;
 public:
@@ -40,18 +39,14 @@ public:
         stick(1)
         {
         }
-    void OperatorControl()
-    {
-        if(stick.GetRawButton(1))
-        {
+    void OperatorControl() {
+        if(stick.GetRawButton(1)) {
             talonsrx.Set(1.0);
         }
-        else if(stick.GetRawButton(2))
-        {
+        else if(stick.GetRawButton(2)) {
             talonsrx.Set(-1.0);
         }
-        else
-        {
+        else {
             talonsrx.Set(0);
         }
     }
@@ -74,18 +69,14 @@ talonsrx(1),
 Initialize talon SRX motor controller as connected to port #1 in the Digital Sidecar (PWM Out); initialized between `public : RobotDemo` and the braces(`{ }`). If it is not the last object initialized, it needs a comma like a list. If it is the last object initialized, no punctuation; no comma, no semicolon, no period, etc. or you will get an error.
 
 ```c++
-void OperatorControl()
-{
-    if(stick.GetRawButton(1))
-    {
+void OperatorControl() {
+    if(stick.GetRawButton(1)) {
         talonsrx.Set(1.0);
     }
-    else if(stick.GetRawButton(2))
-    {
+    else if(stick.GetRawButton(2)) {
         talonsrx.Set(-1.0);
     }
-    else
-    {
+    else {
         talonsrx.Set(0);
     }
 }
