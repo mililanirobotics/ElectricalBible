@@ -1,5 +1,5 @@
 # 5. A Crash Course on C++
-####[Variables](./variables.md)
+###[5.1 Variables](./variables.md)
 
    ➠ Defining Variables
 
@@ -7,7 +7,7 @@
 
    ➠ Constants
 
-####[Functions](./functions.md)
+###[5.2 Functions](./functions.md)
 
    ➠ Arithmetic Functions
 
@@ -15,7 +15,7 @@
 
    ➠ Logical Operators
 
-####[Object Usage](./object_usage.md)
+###[5.3 Object Usage](./object_usage.md)
 
    ➠ Defining Objects
 
@@ -23,7 +23,7 @@
 
    ➠ Using Methods
 
-####[The Joystick](./joystick.md)
+###[5.4 The Joystick](./joystick.md)
 
    ➠ Sample Code
 
