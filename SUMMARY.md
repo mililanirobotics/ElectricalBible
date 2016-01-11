@@ -15,7 +15,7 @@
    * [The Power Converter](PDP/the_power_converter.md)
 * [The D-Link](DLink/README.md)
    * [The Physical Layer](DLink/the_physical_layer.md)
-   * [Configuration](DLink/configuration.md)
+   * [Automatic Configuration](DLink/automatic_configuration.md)
    * [Troubleshooting the D-Link](DLink/troubleshooting_the_d-link.md)
 * [Driver Station](Driver_Station/README.md)
    * [Introduction](Driver_Station/introduction.md)
