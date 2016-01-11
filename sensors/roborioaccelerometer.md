@@ -26,6 +26,7 @@ public:
 	Robot() : accelerometer(Accelerometer::Range::kRange_8G) {
 	
 	}
+	
 	void OperatorControl() {
 		double xAcceleration;	//acceleration on the x-axis
 		double yAcceleration;	//acceleration on the y-axis	
