@@ -1,6 +1,6 @@
 # 8. Sensors
 
-#### 8.1 The roboRIO accelerometer
+#### [8.1 The roboRIO accelerometer](roborioacclerometer.md)
 ➠ General Overview
 
 ➠ Specifications
