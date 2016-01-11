@@ -3,7 +3,7 @@
 * Updated PDP chapter
 * Added Sensors chapter
 * Made formatting changes to Drive Code chapter
-
+* Added Manual Configuration to D-Link section
 <hr />
 
 ##### February 23, 2015, *modified by Vivian*
