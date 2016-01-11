@@ -9,7 +9,7 @@
    * [The CAN Bus](roboRIO/the_can_bus.md)
    * [The Robot Signal Light](roboRIO/the_rsl.md)
 * [The Power Distribution Board (PDP)](PDP/README.md)
-   * [The PDP](pdp/pdpmd.md)
+   * [The PDP](pdp/pdp.md)
    * [120A Circuit Breaker](pdp/120a_circuit_breaker.md)
    * [The Voltage Regulator Module](pdp/the_voltage_regulator_module.md)
    * [The Power Converter](pdp/the_power_converter.md)
