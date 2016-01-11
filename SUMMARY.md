@@ -16,7 +16,7 @@
 * [The D-Link](DLink/README.md)
    * [The Physical Layer](DLink/the_physical_layer.md)
    * [Automatic Configuration](DLink/automatic_configuration.md)
-   * [Manual Configuration](DLink/manual_configuration)
+   * [Manual Configuration](DLink/manual_configuration.md)
    * [Troubleshooting the D-Link](DLink/troubleshooting_the_d-link.md)
 * [Driver Station](Driver_Station/README.md)
    * [Introduction](Driver_Station/introduction.md)
