@@ -20,8 +20,7 @@ Spikes are motor controllers used in driving small motors in forward, reverse, o
 ```c++
 #include "WPILib.h"
 
-class RobotDemo : public SampleRobot
-{
+class RobotDemo : public SampleRobot {
 	Relay spikeblue;
 	Joystick stick;
 
@@ -32,21 +31,16 @@ public:
 	{
 	}
 
-	void Autonomous()
-	{
+	void Autonomous() {
 		spikeblue.Set(Relay::kOn);
 	}
 
-	void OperatorControl()
-	{
-	    while (IsOperatorControl())
-		{
-		    if(stick.GetRawButton(1))
-			{
+	void OperatorControl() {
+	    while (IsOperatorControl()) {
+		    if(stick.GetRawButton(1)) {
 			    spikeblue.Set(Relay::kOn);
 			}
-		    else
-			{
+		    else {
 			    spikeblue.Set(Relay::kOff);
 			}
 		}
@@ -71,21 +65,16 @@ spikeblue(1,Relay::kForward),
 Instantiate the spike relay with the parameters [Digital Sidecar Port#], [direction of current [kForward, kBackward, or kBothDirections]] This is instantiated between `public : RobotDemo():` and the braces (`{ }`).  If it is not the last object initialized, it needs a comma like a list. If it is the last object initialized, no punctuation; no comma, no semicolon, no period, etc. or you will get an error.
 
 ```c++
-void Autonomous()
-	{
+void Autonomous() {
 		spikeblue.Set(Relay::kOn);
 	}
 
-void OperatorControl()
-{
-    while (IsOperatorControl())
-	{
-	    if(stick.GetRawButton(1))
-		{
+void OperatorControl() {
+    while (IsOperatorControl()) {
+	    if(stick.GetRawButton(1)) {
 		    spikeblue.Set(Relay::kOn);
 		}
-	    else
-		{
+	    else {
 		    spikeblue.Set(Relay::kOff);
 		}
 	}
