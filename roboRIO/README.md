@@ -1,4 +1,4 @@
-#The roboRIO
+#1. The roboRIO
 #### [1.1 General roboRIO Overview](./general_roborio_overview.md)
 
 ➠ What is a roboRIO?
