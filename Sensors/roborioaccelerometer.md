@@ -1,6 +1,7 @@
 # roboRIO Accelerometer
 ### ➠ General Overview
 ![](roborio_acc.png)
+
 One of the many features that comes with the RoboRIO is the built-in 3-axis accelerometer, which has the potential to replace the ADXL345 accelerometer that also comes in the 2015 Kit of Parts. The purpose of this device is to determine the proper acceleration of an object, which is its acceleration relative to freefall. This can be used to determine how much the robot is tilted or a way to monitor motion.
 
 ### ➠ Specifications
