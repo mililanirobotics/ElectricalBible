@@ -1,4 +1,8 @@
 # Changelog
+##### January 10, 2016, *modified by Vivian*
+* Updated PDP chapter
+
+<hr />
 
 ##### February 23, 2015, *modified by Vivian*
 * Added Drive Code
