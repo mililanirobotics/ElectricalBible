@@ -1,6 +1,8 @@
 # Changelog
 ##### January 10, 2016, *modified by Vivian*
 * Updated PDP chapter
+* Added Sensors chapter
+* Made formatting changes to Drive Code chapter
 
 <hr />
 
