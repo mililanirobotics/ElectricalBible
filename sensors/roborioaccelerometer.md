@@ -14,7 +14,7 @@ One of the many features that comes with the RoboRIO is the built-in 3-axis acce
 ###➠ The Code
 This is the code we used to determine the direction of each axis as well as the stability of the returned values.
 
-```cpp
+```c++
 #include "WPILib.h"
 
 class Robot: public SampleRobot
@@ -55,8 +55,7 @@ public:
 			previousX = (xAcceleration*0.1) + (0.9*previousX);
 			previousY = (yAcceleration*0.1) + (0.9*previousY);
 			previousZ = (zAcceleration*0.1) + (0.9*previousZ);
-			Wait(kUpdatePeriod); 
-// Wait a short bit before updating again
+			Wait(kUpdatePeriod); // Wait a short bit before updating again
 		}
 	}
 };
