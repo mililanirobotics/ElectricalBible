@@ -11,5 +11,14 @@
 ➠ FRC Configuration Bridge Utility
 
 ### 3.3 Manual Configuration
+➠ Setup: LAN Settings
+
+➠ Set a Device Name
+
+➠ Set the LAN Connection Type
+
+➠ Configure the IPv4 Address, Subnet Mask, and Default Gateway
+
+➠ Wireless Settings
 
 ### 3.4 Troubleshooting the D-Link
