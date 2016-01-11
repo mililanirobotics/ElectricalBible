@@ -41,7 +41,7 @@
    * [Custom Program (Tank Drive)](Drive_Code/custom_program_tank_drive.md)
    * [Custom Program (Mecanum Drive)](Drive_Code/custom_program_mecanum_drive.md)
 * [Sensors](Sensors/README.md)
-   * [roboRIO Accelerometer](sensors/roborio_accelerometer.md)
+   * [roboRIO Accelerometer](sensors/roborioaccelerometer.md)
    * [Microswitch](Sensors/microswitch.md)
    * [Optical Encoder](Sensors/optical_encoder.md)
    * [Gyro](Sensors/gyro.md)
