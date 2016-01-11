@@ -15,8 +15,7 @@ The talon is interchangeable with the jaguar. It has a peak output of 100A and 6
 ```c++
 #include "WPILib.h"
 
-class RobotDemo : public SampleRobot
-{
+class RobotDemo : public SampleRobot {
     Talon talon;
     Joystick stick;
 public:
@@ -26,18 +25,15 @@ public:
         {
         }
 
-    void OperatorControl()
-    {
-        if(stick.GetRawButton(1))
-        {
+    void OperatorControl() {
+        if(stick.GetRawButton(1)) {
             talon.Set(1.0);
         }
         else if(stick.GetRawButton(2))
         {
             talon.Set(-1.0);
         }
-        else
-        {
+        else {
             talon.Set(0);
         }
     }
@@ -61,18 +57,14 @@ talon(1),
 Initialize talon motor controller as connected to port #1 in the Digital Sidecar (PWM Out); initialized between `public : RobotDemo` and the braces(`{ }`). If it is not the last object initialized, it needs a comma like a list. If it is the last object initialized, no punctuation; no comma, no semicolon, no period, etc. or you will get an error.
 
 ```c++
-void OperatorControl()
-{
-    if(stick.GetRawButton(1))
-    {
+void OperatorControl() {
+    if(stick.GetRawButton(1)) {
         talon.Set(1.0);
     }
-    else if(stick.GetRawButton(2))
-    {
+    else if(stick.GetRawButton(2)) {
         talon.Set(-1.0);
     }
-    else
-    {
+    else {
         talon.Set(0);
     }
 }
