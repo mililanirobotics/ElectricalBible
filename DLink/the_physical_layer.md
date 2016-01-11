@@ -1,6 +1,10 @@
 # The Physical Layer
+### ➠ Introduction
+![](./image07.jpg) <br />
+We control the robot through a Logitech gamepad controller. Generally, we wouldn’t want to follow the robot around with an ethernet cable, so we solve this problem by connecting wirelessly. We use the D-Link as a medium to communicate with the robot in this fashion.
+
 ### ➠ The Voltage Regulator Module
-As of the 2015 FRC game, Recycle Rush, the DLink is required to be powered by the 5V/2A AKA “Radio” port on the Voltage Regulator Module. You can read more about it under “The Power Distribution Panel” <br />
+As of the 2015 FRC game, Recycle Rush, the DLink is required to be powered by the 5V/2A AKA “Radio” port on the Voltage Regulator Module. You can read more about it the [The Power Distribution Panel](../PDP/index.md) section.<br />
 
 ![](./image09.png) <br />
 The D-Link itself is connected to a power adapter that is: <br />
