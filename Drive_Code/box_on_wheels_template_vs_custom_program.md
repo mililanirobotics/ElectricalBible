@@ -9,14 +9,12 @@ When I mean custom, delete the unnecessary parts of the template that would be n
 ```c++
 #include "WPILib.h”
 //Last modified: January 25, 2014 by: Alan
-class RobotDemo : public SampleRobot
-{
+class RobotDemo : public SampleRobot {
 	Joystick stick;
 
 public:
 	RobotDemo(void):
-	stick(1)
-	{
+	stick(1) {
 	}
 	// Insert your own comment
 	void Autonomous(void)
@@ -24,16 +22,13 @@ public:
 	}
 
 	// Insert your own comment
-	void OperatorControl(void)
-	{
-		while (IsOperatorControl())
-		{
+	void OperatorControl(void) {
+		while (IsOperatorControl()) {
 			Wait(0.005);	// wait for a motor update time
 		}
 	}
 	// Insert your own comment
-	void Test()
-	{
+	void Test() {
 	}
 };
 START_ROBOT_CLASS(RobotDemo);
@@ -71,19 +66,16 @@ public:
 Instantiate the stick, you can’t use it if you don’t instantiate it. The braces have to be there, part of the compiling. When you start adding in motors and sensors, their expirations/initialization will be set in those braces.
 
 ```c++
-	void Autonomous(void)
-	{
+	void Autonomous(void) {
 	}
 ```
 
 Still need autonomous section, part of the inheritance. If you use it or not is up to that year’s game, but you still need this!
 
 ```c++
-	void OperatorControl(void)
-	{
-		while (IsOperatorControl())
-		{
-		Wait(0.005);	// wait for a motor update time
+	void OperatorControl(void) {
+		while (IsOperatorControl()) {
+		    Wait(0.005);	// wait for a motor update time
 		}
 	}
 ```
@@ -91,8 +83,7 @@ Still need autonomous section, part of the inheritance. If you use it or not is 
 This is where you write the god code, where you let your driver feel like a king moving the robot...with your code :D Make sure the code that will let the driver execute commands is in the while loop, wouldn’t it suck that they can only do it once because it was not in the loop? Before the loop is when you can instantiate specific things such as the resolution of an axis camera.
 
 ```c++
-	void Test()
-    {
+	void Test() {
 	}
 ```
 
